@@ -1,14 +1,27 @@
 package com.mireyaserrano.tema07;
 
+import com.mireyaserrano.tema07.Exceptions.InvalidPlateException;
+import com.mireyaserrano.tema07.Exceptions.InvalidPlateLettersException;
+import com.mireyaserrano.tema07.Exceptions.IvalidPlateLengthException;
 import com.mireyaserrano.tema07.lib.IO;
 
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class MainExcepciones {
     private static final Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
+        String matricula = IO.leerString("Dime la matrícula", 8, 8);
+        try{
+            IO.validarMatricula(matricula);
+        }catch (InvalidPlateException ipe){
+            System.out.println(ipe);
+        } catch (InvalidPlateLettersException iple) {
+            System.out.println(iple);
+        } catch (IvalidPlateLengthException iplne) {
+            System.out.println(iplne);
+        }
+        /*
         int numero = leerEntero("Dime un número", 0, 100);
 
         try {
@@ -18,6 +31,8 @@ public class MainExcepciones {
         }
 
         System.out.println(numero);
+        */
+
     }
 
     /**
@@ -58,26 +73,5 @@ public class MainExcepciones {
         } while (!valido);
         return numero;
     }
-
-    public static class InvalidMatriculaException extends InputMismatchException {
-        public InvalidMatriculaException(String msg) {
-            super(msg);
-        }
-    }
-
-    public static String matriculaValida(String mensaje){
-        boolean valido = false;
-        String matricula;
-        do {
-            System.out.println(mensaje);
-            matricula = scanner.nextLine();
-            valido = IO.validarMatricula(matricula);
-            if (!valido) {
-                throw new InvalidMatriculaException("Introduce una matrícula válida. (Ej: 1234 BCD)");
-            }
-        } while (!valido);
-        return matricula;
-    }
-
 
 }
