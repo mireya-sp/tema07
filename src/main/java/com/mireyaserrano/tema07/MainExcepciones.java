@@ -13,8 +13,8 @@ public class MainExcepciones {
     private static final Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
-        Ejercicio01 ej1 = new Ejercicio01();
-        System.out.println(Arrays.toString(ej1.solicitarNumeros("Introduce un número")));
+        Ejercicio03 ej3 = new Ejercicio03();
+        ej3.ej3();
 
         /*
         String matricula = IO.leerString("Dime la matrícula", 8, 8);

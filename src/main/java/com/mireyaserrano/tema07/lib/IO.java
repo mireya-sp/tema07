@@ -54,4 +54,10 @@ public class IO {
         }
         return true;
     }
+
+    public static double solicitarNumero(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Introduce un número");
+        return Double.parseDouble(scanner.nextLine());
+    }
 }
