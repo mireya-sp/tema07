@@ -25,11 +25,14 @@ public class IO {
         return valor;
     }
 
+    /*
     public static void parsearMatricula(String matricula) throws InvalidPlateException {
         if (!validarMatricula(matricula)){
             throw new InvalidPlateException("La matrícula no es válida");
         }
     }
+    */
+
 
     public static boolean validarMatricula(String matricula) throws IvalidPlateLengthException, InvalidPlateException, InvalidPlateLettersException {
         int i;

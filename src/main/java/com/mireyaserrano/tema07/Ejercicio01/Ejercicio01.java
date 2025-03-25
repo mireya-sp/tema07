@@ -1,31 +1,35 @@
 package com.mireyaserrano.tema07.Ejercicio01;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Ejercicio01 {
-    public double[] solicitarNumeros(){
+
+    /**
+     * Pide números hasta que se introduce un número negativo, si se introducen letras mete excepción
+     * @param mensaje El mensaje que muestra para introducir números
+     * @return el array con los números que se han introducido
+     */
+    public double[] solicitarNumeros(String mensaje){
         Scanner scanner = new Scanner(System.in);
-        double[] arrayNumeros;
-        double num = 0;
-        int cantNum = 0;
-        String numeros = "";
+        ArrayList<Double> numeros = new ArrayList<>();
+        double numero = 0;
         do {
             try {
-                System.out.println("Introduce un número");
-                num = Double.parseDouble(scanner.nextLine());
-                if (num >= 0) {
-                    numeros += num + " ";
-                    cantNum++;
+                System.out.println(mensaje);
+                numero = Double.parseDouble(scanner.nextLine());
+                if (numero >= 0) {
+                    numeros.add(numero);
                 }
             } catch (NumberFormatException nfe) {
-                System.err.println("Solo número porfa");
+                System.err.println("Sólo números por favor!");
+                numero = 1;
             }
-        } while (num >= 0);
-        arrayNumeros = new double[cantNum];
-        String[] numerosSplit = numeros.split(" ");
-        for (int i = 0; i < numerosSplit.length; i++) {
-            arrayNumeros[i] = Double.parseDouble(numerosSplit[i]);
+        } while (numero >= 0);
+        double[] valores = new double[numeros.size()];
+        for (int i = 0; i < numeros.size(); i++) {
+            valores[i] = numeros.get(i);
         }
-        return arrayNumeros;
+        return valores;
     }
 }
