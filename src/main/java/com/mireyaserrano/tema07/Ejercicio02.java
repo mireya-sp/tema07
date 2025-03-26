@@ -1,33 +1,59 @@
 package com.mireyaserrano.tema07;
 
+import com.mireyaserrano.tema07.Exceptions.NumberEmptyException;
+
 import java.util.Scanner;
 
 public class Ejercicio02 {
-    public void numMasAlto(){
-        Scanner scanner = new Scanner(System.in);
-        double[] numeros = new double[10];
-        int contador = 0;
-        int contadorExcepciones = 0;
-        double num;
-        do{
-            try{
-                System.out.printf("Introduce el numero de la posición %d", contador);
-                num = Double.parseDouble(scanner.nextLine());
-                contador++;
-            }catch (NumberFormatException nfe){
-                System.out.println("Pon un NÚMERO de nuevo por favor!");
-                contadorExcepciones++;
-            }
-        }while (contador < 10);
+    public static Scanner scanner = new Scanner(System.in);
 
-        double numMasAlto = numeros[0];
-        for (int i = 0; i < numeros.length; i++) {
-            if (numeros[i] > numMasAlto){
-                numMasAlto = numeros[i];
+    public static double[] solicitarArrayDouble(final int CANTIDAD_DOUBLES){
+        int contadorExcepciones = 0;
+        String entrada;
+        boolean valido;
+        double numero=0;
+        double[] almacen = new double[CANTIDAD_DOUBLES];
+
+        for (int j = 0; j < CANTIDAD_DOUBLES; j++) {
+            valido=false;
+            do {
+                try {
+                    //Solicitamos el número
+                    System.out.printf("Intoduce el %dº número: ", j+1);
+                    entrada = scanner.nextLine().trim();
+
+                    if (entrada.isEmpty()) {
+                        throw new NumberEmptyException("No se puede introducir una entrada vacía.");
+                    }
+
+                    numero = Double.parseDouble(entrada);
+                    valido = true;
+                } catch (NumberEmptyException nee){
+                    System.out.println(nee.getMessage());
+                }catch (NumberFormatException nfe) {
+                    System.out.println("Solo se aceptan números.");
+                }
+            } while (!valido);
+            almacen[j]=numero;
+        }
+
+        System.out.printf("Se han producido %d excepciones.\n",contadorExcepciones);
+        return almacen;
+    }
+
+    public static double maxDouble(double[] array) throws ArrayIndexOutOfBoundsException{
+        double max = array[0];
+        double aux;
+        for (int i = 1; i < array.length; i++) {
+            aux= array[i];
+            if (aux>max){
+                max=aux;
             }
         }
-        System.out.println("El número más alto es " + numMasAlto);
+        return max;
+    }
 
-        System.out.printf("Las excepciones han saltado %d veces", contadorExcepciones);
+    public static void main(String[] args) {
+        System.out.println(maxDouble(solicitarArrayDouble(10)));
     }
 }

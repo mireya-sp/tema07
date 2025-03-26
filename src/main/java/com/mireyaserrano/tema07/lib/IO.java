@@ -25,6 +25,46 @@ public class IO {
         return valor;
     }
 
+    public static int leerEntero(String mensaje, int min, int max){
+        boolean valido;
+        int num = 0;
+        do {
+            boolean valid;
+            try {
+                System.out.println(mensaje);
+                do {
+                    num = Integer.parseInt(scanner.nextLine());
+                    valid = num >= min && num <= max;
+                } while (!valid);
+                valido = true;
+            } catch (NumberFormatException nfe) {
+                System.err.println("Por favor, inserta un número");
+                valido = false;
+            }
+        }while (!valido);
+        return num;
+    }
+
+    public static double leerDoubles(String mensaje, int min, int max){
+        boolean valido;
+        double num = 0;
+        do {
+            boolean valid;
+            try {
+                System.out.println(mensaje);
+                do {
+                    num = Double.parseDouble(scanner.nextLine());
+                    valid = num >= min && num <= max;
+                } while (!valid);
+                valido = true;
+            } catch (NumberFormatException nfe) {
+                System.err.println("Por favor, inserta un número");
+                valido = false;
+            }
+        }while (!valido);
+        return num;
+    }
+
     /*
     public static void parsearMatricula(String matricula) throws InvalidPlateException {
         if (!validarMatricula(matricula)){
