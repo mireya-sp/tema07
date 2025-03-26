@@ -14,7 +14,7 @@ public class MainExcepciones {
 
     public static void main(String[] args) {
         Ejercicio02 ej02 = new Ejercicio02();
-        ej02.numMasAlto();
+
 
         /*
         String matricula = IO.leerString("Dime la matrícula", 8, 8);
