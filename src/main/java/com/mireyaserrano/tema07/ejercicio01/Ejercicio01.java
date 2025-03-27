@@ -1,4 +1,4 @@
-package com.mireyaserrano.tema07.Ejercicio01;
+package com.mireyaserrano.tema07.ejercicio01;
 
 import java.util.ArrayList;
 import java.util.Scanner;

@@ -25,7 +25,5 @@ public class Ejercicio08 {
         }catch (IndexOutOfBoundsException ioobe){
             System.err.println("IndexOutOfBounds");
         }
-
-
     }
 }

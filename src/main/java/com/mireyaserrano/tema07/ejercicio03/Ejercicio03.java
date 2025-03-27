@@ -1,6 +1,5 @@
-package com.mireyaserrano.tema07;
+package com.mireyaserrano.tema07.ejercicio03;
 
-import com.mireyaserrano.tema07.Exceptions.InvalidPlateException;
 import com.mireyaserrano.tema07.lib.IO;
 import java.util.ArrayList;
 

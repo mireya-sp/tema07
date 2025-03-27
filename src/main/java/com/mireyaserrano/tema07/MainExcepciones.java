@@ -1,12 +1,7 @@
 package com.mireyaserrano.tema07;
 
-import com.mireyaserrano.tema07.Ejercicio01.Ejercicio01;
-import com.mireyaserrano.tema07.Exceptions.InvalidPlateException;
-import com.mireyaserrano.tema07.Exceptions.InvalidPlateLettersException;
-import com.mireyaserrano.tema07.Exceptions.IvalidPlateLengthException;
-import com.mireyaserrano.tema07.lib.IO;
+import com.mireyaserrano.tema07.ejercicio02.Ejercicio02;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class MainExcepciones {

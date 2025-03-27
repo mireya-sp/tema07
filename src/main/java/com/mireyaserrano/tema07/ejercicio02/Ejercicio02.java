@@ -1,4 +1,4 @@
-package com.mireyaserrano.tema07;
+package com.mireyaserrano.tema07.ejercicio02;
 
 import com.mireyaserrano.tema07.Exceptions.NumberEmptyException;
 

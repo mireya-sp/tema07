@@ -2,7 +2,7 @@ package com.mireyaserrano.tema07.ejercicio09;
 
 import com.mireyaserrano.tema07.Exceptions.InvalidCeroException;
 import com.mireyaserrano.tema07.Exceptions.InvalidIndexArrayException;
-import com.mireyaserrano.tema07.Exceptions.InvalidPointTException;
+import com.mireyaserrano.tema07.Exceptions.InvalidPointnTException;
 
 public class Ejercicio09 {
     public static void main(String[] args){
@@ -18,7 +18,7 @@ public class Ejercicio09 {
             System.out.println("Intento imprimir un elemento del array null (NullPointerExceptions)");
             System.out.println(numeros[0]);
         }catch (NullPointerException npe){
-            throw new InvalidPointTException("Es null Bro");
+            throw new InvalidPointnTException("Es null Bro");
         }
         numeros = new int[3];
         try {

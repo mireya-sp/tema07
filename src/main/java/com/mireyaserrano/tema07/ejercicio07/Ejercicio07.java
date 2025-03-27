@@ -10,7 +10,7 @@ public class Ejercicio07 {
     public static void mostrarCadenasArray(String[] array){
         for (int i = 0; i < array.length; i++) {
             try {
-                System.out.println(array[i].charAt(0));
+                System.out.println(array[i].trim().charAt(0));
             }catch (NullPointerException npe){
                 System.out.printf("El índice %d es null\n", i);
             }

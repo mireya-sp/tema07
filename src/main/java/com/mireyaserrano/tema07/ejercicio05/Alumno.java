@@ -1,4 +1,4 @@
-package com.mireyaserrano.tema07.Ejercicio05;
+package com.mireyaserrano.tema07.ejercicio05;
 
 public class Alumno {
     private final String nombre;

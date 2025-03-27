@@ -1,4 +1,4 @@
-package com.mireyaserrano.tema07.Ejercicio05;
+package com.mireyaserrano.tema07.ejercicio05;
 
 import com.mireyaserrano.tema07.lib.IO;
 
